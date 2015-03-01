@@ -1,4 +1,5 @@
 def analizadorSintaxis(orden):
+    # Esto sirve para que a partir del saludo el prompt sea diferente
     if orden == 1:
         respuesta = input("Hola, soy tu asistente iVii, ¿qué desea hacer?: ")
     else:
@@ -6,7 +7,8 @@ def analizadorSintaxis(orden):
 
     respuesta = respuesta.lower()
 
-    if "cómo" in respuesta or "cuál" in respuesta or "qué" in respuesta:
+    # Determina si el usuario pregunta en respuestas que son ambiguas
+    if "cómo" in respuesta or "cuál" in respuesta or "qué" or "dime" in respuesta:
         tipo = "pregunta"
     else:
         tipo = "normal"
@@ -36,8 +38,8 @@ def analizadorSintaxis(orden):
     elif "edad" in respuesta or "años" in respuesta:
         modo = "edad"
 
-    elif "adios" in respuesta or "hasta luego" in respuesta or "apágate" in respuesta or "salir" in respuesta\
-          or "hasta mañana" in respuesta:
+    elif "adios" in respuesta or "hasta luego" in respuesta or "apágate" in respuesta or "salir" in respuesta \
+    or "hasta mañana" in respuesta:
         modo = "despedirse"
 
     elif "+" in respuesta or "suma" in respuesta:
